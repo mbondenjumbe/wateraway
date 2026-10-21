@@ -1,0 +1,14 @@
+body { margin: 0; font-family: sans-serif; }
+
+.header { padding: 1rem 2rem; background: #014608; }
+.header h2 { color: white; margin: 0; }
+
+.hero { text-align: center; padding: 6rem 1rem; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("./assets/wateringplant.jpeg") center / cover no-repeat; }
+.hero h1, .hero p { color: white; }
+
+.features { display: flex; gap: 1rem; justify-content: center; padding: 2rem; flex-wrap: wrap; }
+.card { border: 1px solid #ccc; border-radius: 8px; padding: 1.5rem; width: 220px; text-align: center; }
+.icon { font-size: 2rem; }
+
+.footer { text-align: center; padding: 1rem; background: #014608; }
+.footer p { color: white; margin: 0; }
