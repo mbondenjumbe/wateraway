@@ -1,7 +1,7 @@
 function Header() {
   return (
-    <header className="header">
-      <h2>💧 Wateraway</h2>
+    <header className="site-header">
+      <h2>🌱 Wateraway</h2>
     </header>
   );
 }

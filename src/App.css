@@ -12,3 +12,167 @@ body { margin: 0; font-family: sans-serif; }
 
 .footer { text-align: center; padding: 1rem; background: #014608; }
 .footer p { color: white; margin: 0; }
+
+.app.dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav a {
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.app.dark .nav {
+  background-color: #111;
+}
+
+/* Default layout (big screens): 3 columns */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 24px;
+}
+
+/* Breakpoint 1: small laptop */
+@media (max-width: 1024px) {
+  .features {
+    gap: 16px;
+    padding: 16px;
+  }
+  .nav {
+    gap: 16px;
+  }
+}
+
+/* Breakpoint 2: tablet */
+@media (max-width: 768px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nav {
+    padding: 12px;
+  }
+}
+
+/* Breakpoint 3: phone */
+@media (max-width: 480px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ---------- Polish: basics ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ---------- Polish: layout ---------- */
+.features {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Stops the sticky nav from covering the top of a section */
+#home,
+#features,
+#contact {
+  scroll-margin-top: 70px;
+}
+
+/* ---------- Polish: dark mode button ---------- */
+.app > button {
+  display: block;
+  margin: 16px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  background-color: #2e7d32;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.app > button:hover {
+  background-color: #1b5e20;
+}
+
+/* ---------- Polish: feature cards ---------- */
+.features > * {
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #f3f8f3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.features > *:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.app.dark .features > * {
+  background-color: #2a2a2a;
+}
+
+/* ---------- Polish: nav hover ---------- */
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.app.dark .nav a {
+  color: #81c784;
+}
+
+.site-header {
+  text-align: center;
+  padding: 8px 16px;
+}
+
+.site-header h2 {
+  margin: 0;
+  color: #2e7d32;
+}
+
+.app.dark .site-header h2 {
+  color: #81c784;
+}

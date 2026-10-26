@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import FeatureCard from "./components/FeatureCard";
@@ -11,11 +13,27 @@ const features = [
 ];
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.title = darkMode ? "Wateraway - Dark Mode" : "Wateraway - Light Mode";
+  }, [darkMode]);
+
   return (
-    <>
+    <div className={darkMode ? "app dark" : "app"}>
+      <Nav />
+
+      <button onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? "Switch to Light" : "Switch to Dark"}
+      </button>
+
       <Header />
-      <Hero />
-      <section className="features">
+
+      <div id="home">
+        <Hero />
+      </div>
+
+      <section id="features" className="features">
         {features.map((feature) => (
           <FeatureCard
             key={feature.title}
@@ -25,8 +43,11 @@ function App() {
           />
         ))}
       </section>
-      <Footer />
-    </>
+
+      <div id="contact">
+        <Footer />
+      </div>
+    </div>
   );
 }
 
